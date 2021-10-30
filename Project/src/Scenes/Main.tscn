@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Objects/PotCookTest.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Actors/PlayerTest.tscn" type="PackedScene" id=2]
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 50, 50 )
+
+[node name="Main" type="Spatial"]
+
+[node name="CSGMesh" type="CSGMesh" parent="."]
+use_collision = true
+mesh = SubResource( 1 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.898587, -0.438795, 0, 0.408335, -0.836211, 0.366079, -0.160633, 0.328954, 0.930584, 0, 0, 0 )
+
+[node name="PotCookTest" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.774147, 0 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 0.994835, -0.0913609, -0.0442258, 0.100905, 0.842941, 0.528459, -0.0110006, -0.530192, 0.847806, 6.56208, 5.92542, 7.08232 )
+
+[node name="SpringArm" type="SpringArm" parent="Spatial"]
+
+[node name="Camera" type="Camera" parent="Spatial/SpringArm"]
+
+[node name="PlayerTest" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.90025, -2.04186 )
+
+[node name="PlayerTest2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67654, 1.44764, 0 )
+player = 2
