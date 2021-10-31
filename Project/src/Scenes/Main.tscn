@@ -34,7 +34,7 @@ shadow_enabled = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.774147, 0 )
 
 [node name="Spatial" type="Spatial" parent="."]
-transform = Transform( 0.994835, -0.0913609, -0.0442258, 0.0850071, 0.988016, -0.128837, 0.0554665, 0.124412, 0.990679, 0.857166, 0.74657, 13.2739 )
+transform = Transform( 1, 0, 0, 0, 0.642788, 0.766045, 0, -0.766044, 0.642788, 1, 10, 13 )
 
 [node name="SpringArm" type="SpringArm" parent="Spatial"]
 
