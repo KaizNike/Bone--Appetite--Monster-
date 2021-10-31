@@ -1,6 +1,7 @@
 extends KinematicBody
 
 export var player = 1
+export var local = true
 
 export var speed = 250
 var vel = Vector3.ZERO
@@ -32,5 +33,17 @@ func _get_dir() -> Vector3:
 			-Input.get_action_strength("p2_move_left") + Input.get_action_strength("p2_move_right"), 
 			0, 
 			-Input.get_action_strength("p2_move_up") + Input.get_action_strength("p2_move_down")
+		)
+	if player == 3:
+		return Vector3(
+			-Input.get_action_strength("p3_move_left") + Input.get_action_strength("p3_move_right"), 
+			0, 
+			-Input.get_action_strength("p3_move_up") + Input.get_action_strength("p3_move_down")
+		)
+	if player == 4:
+		return Vector3(
+			-Input.get_action_strength("p4_move_left") + Input.get_action_strength("p4_move_right"), 
+			0, 
+			-Input.get_action_strength("p4_move_up") + Input.get_action_strength("p4_move_down")
 		)
 	return Vector3.ZERO
