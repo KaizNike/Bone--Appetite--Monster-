@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Objects/PotCookTest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/PlayerTest.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/Objects/LightTest.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/2d/enviroments/sky.png" type="Texture" id=5]
 [ext_resource path="res://src/Objects/PotCook.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Objects/PumpkinMoveableCarved.tscn" type="PackedScene" id=7]
 
 [sub_resource type="SpatialMaterial" id=2]
 
@@ -72,3 +73,6 @@ environment = SubResource( 4 )
 
 [node name="PotCook" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.940649, 2.02234, 4.11828 )
+
+[node name="PumpkinMovable2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.619491, 0, -0.785003, 0, 1, 0, 0.785003, 0, 0.619491, 5.11999, 0.4568, 0 )

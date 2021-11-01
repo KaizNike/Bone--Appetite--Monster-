@@ -39,7 +39,7 @@ func _input(event):
 		$MarginContainer4/VSplitContainer.add_child(instance)
 		playersReady[3] = true
 		Globals.emit_signal("lobby_players_updated", playersReady)
-		$MarginContainer/VSplitContainer/p4Label.text = "Player four in!"
+		$MarginContainer4/VSplitContainer/p4Label.text = "Player four in!"
 	if event.is_action_pressed("action_key") and not playersReady[0]:
 		var instance = playerButtons.instance()
 		instance.player = 1
