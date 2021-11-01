@@ -9,6 +9,7 @@ height = 1.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 cast_shadow = 2
+billboard = 1
 shaded = true
 alpha_cut = 2
 texture = ExtResource( 1 )

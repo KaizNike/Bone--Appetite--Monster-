@@ -12,7 +12,6 @@ points = PoolVector3Array( 0.191342, 0.777017, 0.0384887, 0.37533, 0.787843, 0.0
 
 [node name="CSGPolygon" type="CSGPolygon" parent="pumpkin2"]
 transform = Transform( 0.252271, 0, 0.863387, 0, 0.5, 0, -0.431693, 0, 0.504543, 0.42941, 0.323238, 1.33797 )
-use_collision = true
 polygon = PoolVector2Array( 0.583576, -0.0925745, 1.30418, -0.318882, 1.80431, 0.158328, 1.14322, 0.357414 )
 material = ExtResource( 2 )
 
