@@ -35,6 +35,8 @@ func _on_ReturnButton_pressed():
 
 func _on_StartButton_pressed():
 	Globals.playersReady = playersReady
+	Globals.Seed = int($Control/PanelContainer/VBoxContainer/HSplitContainer4/SeedLineEdit.text)
+	print(Globals.Seed)
 	get_tree().change_scene("res://src/Scenes/Main.tscn")
 	pass # Replace with function body.
 

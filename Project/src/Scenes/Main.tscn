@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://src/Actors/PlayerTest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UI/GameUI.tscn" type="PackedScene" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.129412, 0.615686, 0.184314, 1 )
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 1 )
@@ -32,3 +35,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 4, 10 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4, 10 )
 
 [node name="UtilityUI" parent="." instance=ExtResource( 3 )]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+use_collision = true
+width = 85.0
+height = 0.5
+depth = 85.0
+material = SubResource( 1 )

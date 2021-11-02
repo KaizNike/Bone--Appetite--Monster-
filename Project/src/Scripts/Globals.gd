@@ -3,6 +3,7 @@ extends Node
 var version = [0,6,"-alpha"]
 var versonInfo = "Timer and music!"
 var gameLength = 60 * 5
+var Seed = 0
 
 signal music_changed(value)
 signal time_ran_out()
