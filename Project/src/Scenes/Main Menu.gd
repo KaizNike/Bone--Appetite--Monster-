@@ -1,6 +1,8 @@
 extends Node
 
 func _ready():
+	$Control/PanelContainer/VBoxContainer/VersionLabel.text = "V " + str(Globals.version[0]) + "." + str(Globals.version[1]) + str(Globals.version[2])
+	$Control/PanelContainer/VBoxContainer/VersionLabel.hint_tooltip = Globals.versonInfo
 	$Control/PanelContainer/VBoxContainer/LocalPlayButton.grab_focus()
 
 func _on_QuitButton_pressed():
