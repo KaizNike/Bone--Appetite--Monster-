@@ -4,28 +4,38 @@ var players = 0
 var playersReady = []
 var firstGrab = true
 
+onready var controllerNum = $Control/PanelContainer/HSplitContainer/VBoxContainer/HSplitContainer2/ControllersNum
+onready var startButton = get_node("Control/PanelContainer/HSplitContainer/VBoxContainer/StartButton")
+
 func _ready():
+#	var MAX_PLAYERS = Globals.MAX_PLAYERS
+
+	var peer = NetworkedMultiplayerENet.new()
+	peer.create_client(Globals.SERVER_IP, Globals.SERVER_PORT)
+	get_tree().network_peer = peer
+	print(get_tree().is_network_server())
+	print(get_tree().get_network_peer())
 	Globals.connect("lobby_players_updated", self,"_on_players_updated")
 	Input.connect("joy_connection_changed",self,"_controllers_changed")
-	$Control/PanelContainer/VBoxContainer/HSplitContainer2/ControllersNum.text = str(Input.get_connected_joypads().size())
+	controllerNum.text = str(Input.get_connected_joypads().size())
 
 func _input(event):
 	if event.is_action_pressed("ui_down") and players > 0 and firstGrab:
 		firstGrab = false
-		$Control/PanelContainer/VBoxContainer/HSplitContainer3/OptionButton.grab_focus()
+		$Control/PanelContainer/HSplitContainer/VBoxContainer/HSplitContainer3/OptionButton.grab_focus()
 	pass
 
 func _on_players_updated(array):
-	$Control/PanelContainer/VBoxContainer/StartButton.disabled = false
+	startButton.disabled = false
 	players = 0
 	playersReady = array
 	for x in array:
 		if x:
 			players += 1
-	$Control/PanelContainer/VBoxContainer/HSplitContainer2/PlayerNum.text = str(players)
+	$Control/PanelContainer/HSplitContainer/VBoxContainer/HSplitContainer2/PlayerNum.text = str(players)
 	
 func _controllers_changed(device, connected):
-	$Control/PanelContainer/VBoxContainer/HSplitContainer2/ControllersNum.text = str(Input.get_connected_joypads().size())
+	controllerNum.text = str(Input.get_connected_joypads().size())
 
 
 func _on_ReturnButton_pressed():
@@ -35,7 +45,7 @@ func _on_ReturnButton_pressed():
 
 func _on_StartButton_pressed():
 	Globals.playersReady = playersReady
-	Globals.Seed = int($Control/PanelContainer/VBoxContainer/HSplitContainer4/SeedLineEdit.text)
+	Globals.Seed = int($Control/PanelContainer/HSplitContainer/VBoxContainer/HSplitContainer4/SeedLineEdit.text)
 	print(Globals.Seed)
 	get_tree().change_scene("res://src/Scenes/Main.tscn")
 	pass # Replace with function body.

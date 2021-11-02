@@ -1,6 +1,6 @@
 [gd_scene format=2]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="Background" type="CanvasLayer"]
 layer = -5
 
 [node name="ColorRect" type="ColorRect" parent="."]

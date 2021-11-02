@@ -1,6 +1,12 @@
 extends Node
 
 func _ready():
+	for i in range(OS.get_cmdline_args().size()):
+		match OS.get_cmdline_args()[i]:
+			"--server":
+				Globals.is_server = true
+				get_tree().change_scene("res://src/Scenes/Server.tscn")
+	
 	$Control/PanelContainer/VBoxContainer/VersionLabel.text = "V " + str(Globals.version[0]) + "." + str(Globals.version[1]) + str(Globals.version[2])
 	$Control/PanelContainer/VBoxContainer/VersionLabel.hint_tooltip = Globals.versonInfo
 	$Control/PanelContainer/VBoxContainer/LocalPlayButton.grab_focus()

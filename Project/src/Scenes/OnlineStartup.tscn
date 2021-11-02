@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/UI/resources/CanvasLayerColorBack.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Resources/Header 1.tres" type="Theme" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://src/Scenes/OnlineStartup.gd" type="Script" id=6]
 [ext_resource path="res://src/Scenes/OptionButton.gd" type="Script" id=7]
 [ext_resource path="res://src/Scenes/SeedLineEdit.gd" type="Script" id=8]
+[ext_resource path="res://src/Scenes/ChatLog.gd" type="Script" id=9]
+[ext_resource path="res://src/UI/ConnectionContainer.tscn" type="PackedScene" id=10]
 
 [node name="OnlineStartup" type="Node"]
 script = ExtResource( 6 )
@@ -84,17 +86,25 @@ margin_bottom = 26.0
 theme = ExtResource( 3 )
 text = "AAAA"
 
-[node name="Label3" type="Label" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
+[node name="Divider" type="Label" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
 margin_left = 128.0
 margin_top = 5.0
-margin_right = 206.0
+margin_right = 136.0
+margin_bottom = 26.0
+theme = ExtResource( 3 )
+text = "*"
+
+[node name="Label3" type="Label" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
+margin_left = 140.0
+margin_top = 5.0
+margin_right = 218.0
 margin_bottom = 26.0
 theme = ExtResource( 3 )
 text = "Join Room:"
 
 [node name="JoinRoomCode" type="LineEdit" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
-margin_left = 210.0
-margin_right = 256.0
+margin_left = 222.0
+margin_right = 268.0
 margin_bottom = 31.0
 theme = ExtResource( 3 )
 placeholder_text = "????"
@@ -357,17 +367,20 @@ margin_left = 414.0
 margin_right = 489.0
 margin_bottom = 323.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelContainer/HSplitContainer/VBoxContainer2"]
+[node name="ChatLog" type="RichTextLabel" parent="Control/PanelContainer/HSplitContainer/VBoxContainer2"]
 margin_right = 75.0
 margin_bottom = 295.0
 size_flags_vertical = 3
 theme = ExtResource( 3 )
 text = "Chat log!"
+script = ExtResource( 9 )
 
 [node name="LineEdit" type="LineEdit" parent="Control/PanelContainer/HSplitContainer/VBoxContainer2"]
 margin_top = 299.0
 margin_right = 75.0
 margin_bottom = 323.0
+
+[node name="ConnectionContainer" parent="." instance=ExtResource( 10 )]
 
 [connection signal="pressed" from="Control/PanelContainer/HSplitContainer/VBoxContainer/HSplitContainer/ReturnButton" to="." method="_on_ReturnButton_pressed"]
 [connection signal="text_entered" from="Control/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer/JoinRoomCode" to="." method="_on_JoinRoomCode_text_entered"]
