@@ -291,4 +291,5 @@ disabled = true
 text = "Start"
 
 [connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HSplitContainer/ReturnButton" to="." method="_on_ReturnButton_pressed"]
+[connection signal="item_selected" from="Control/PanelContainer/VBoxContainer/HSplitContainer3/OptionButton" to="." method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="Control/PanelContainer/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]

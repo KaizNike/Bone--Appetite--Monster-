@@ -1,9 +1,11 @@
 extends Node
 
-var version = [0,4,"-alpha"]
-var versonInfo = "The Menu Update: Now we can get into the game!"
+var version = [0,6,"-alpha"]
+var versonInfo = "Timer and music!"
+var gameLength = 60 * 5
 
 signal music_changed(value)
+signal time_ran_out()
 
 signal lobby_players_updated(array)
 

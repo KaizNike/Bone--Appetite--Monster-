@@ -1,14 +1,11 @@
 extends Control
 
 func _ready():
-	var master_sound = AudioServer.get_bus_index("Master")
-	var isMusicOn = AudioServer.is_bus_mute(master_sound)
-	$PopupPanel/CheckButton.pressed = !isMusicOn
+	$Timer.wait_time = Globals.gameLength
+	$Timer.start()
 
+func _physics_process(delta):
+	$PanelContainer/HSplitContainer/TimeLeft.text = str($Timer.time_left)
 
-
-func _on_CheckButton_toggled(button_pressed):
-	print(button_pressed)
-	Globals.emit_signal("music_changed", button_pressed)
-	$PopupPanel/CheckButton.release_focus()
-	pass # Replace with function body.
+func _on_Timer_timeout():
+	Globals.emit_signal("time_ran_out")

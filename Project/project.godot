@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 
 Globals="*res://src/Scripts/Globals.gd"
 MusicMaster="*res://src/Scripts/music_master.gd"
+MusicPlayer="*res://src/AutoLoad/MusicPlayer.tscn"
 
 [input]
 

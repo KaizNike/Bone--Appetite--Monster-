@@ -37,3 +37,24 @@ func _on_StartButton_pressed():
 	Globals.playersReady = playersReady
 	get_tree().change_scene("res://src/Scenes/Main.tscn")
 	pass # Replace with function body.
+
+
+func _on_OptionButton_item_selected(index):
+	"""func _ready():
+	add_item("5 Minutes")
+	add_item("10 Minutes")
+	add_item("15 Minutes")
+	add_item("30 Minutes")
+	add_item("1 Hour")"""
+	
+	if index == 0:
+		Globals.gameLength = 60*5
+	elif index == 1:
+		Globals.gameLength = 60*10
+	elif index == 2:
+		Globals.gameLength = 60*15
+	elif index == 3:
+		Globals.gameLength = 60*30
+	elif index == 4:
+		Globals.gameLength = 60*60
+	print(Globals.gameLength)

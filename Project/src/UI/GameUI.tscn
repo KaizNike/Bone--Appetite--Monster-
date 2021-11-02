@@ -3,7 +3,7 @@
 [ext_resource path="res://src/ui/GameUI.gd" type="Script" id=1]
 [ext_resource path="res://src/Resources/Normal Font.tres" type="Theme" id=2]
 
-[node name="GameUI" type="Control"]
+[node name="UtilityUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -12,29 +12,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PopupPanel" type="PanelContainer" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -54.0
-margin_right = 133.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 14.0
+margin_bottom = 14.0
 
-[node name="CheckButton" type="CheckButton" parent="PopupPanel"]
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 130.0
-margin_bottom = 47.0
-hint_tooltip = "Turns all sound on or off! Bug developers for more options next release!"
+margin_right = 99.0
+margin_bottom = 28.0
+
+[node name="Label" type="Label" parent="PanelContainer/HSplitContainer"]
+margin_right = 39.0
+margin_bottom = 21.0
 theme = ExtResource( 2 )
-pressed = true
-text = "Sound"
+text = "Time:"
 
-[node name="Label" type="Label" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 14.0
-text = "TEST!"
+[node name="TimeLeft" type="Label" parent="PanelContainer/HSplitContainer"]
+margin_left = 51.0
+margin_right = 92.0
+margin_bottom = 21.0
+theme = ExtResource( 2 )
+text = "00:00"
 
-[connection signal="toggled" from="PopupPanel/CheckButton" to="." method="_on_CheckButton_toggled"]
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
