@@ -6,6 +6,9 @@ var gameLength = 60 * 5
 var Seed = 0
 var is_server = false
 
+var characters = 'abcdefghijklmnopqrstuvwxyz'
+var capital_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
 
 const SERVER_IP = "127.0.0.1"
 const SERVER_PORT = 3332
@@ -19,3 +22,12 @@ signal lobby_players_updated(array)
 
 var max_players = 12
 var playersReady = []
+
+func _ready():
+	randomize()
+
+func generate_room_key() -> String:
+	var Key = ""
+	
+	return ""
+	pass
