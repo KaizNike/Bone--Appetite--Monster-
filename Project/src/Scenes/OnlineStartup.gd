@@ -9,7 +9,6 @@ onready var startButton = get_node("Control/PanelContainer/HSplitContainer/VBoxC
 
 func _ready():
 #	var MAX_PLAYERS = Globals.MAX_PLAYERS
-
 	var peer = NetworkedMultiplayerENet.new()
 	peer.create_client(Globals.SERVER_IP, Globals.SERVER_PORT)
 	get_tree().network_peer = peer
