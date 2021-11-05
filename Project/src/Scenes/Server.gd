@@ -1,7 +1,7 @@
 extends Node
 
 var rooms = []
-var room = {"key":"","active":false, "score":0}
+var room = {"key":"","active":false, "score":0, "host_ip": ""}
 
 
 func _ready():
