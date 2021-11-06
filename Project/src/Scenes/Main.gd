@@ -1,6 +1,6 @@
 extends Spatial
 
-export(PackedScene) var playerTest
+export(PackedScene) var PlayerScene
 
 func _ready():
 	if Globals.playersReady.size() == 0:
@@ -9,7 +9,7 @@ func _ready():
 	var index = 1
 	for player in Globals.playersReady:
 		if player:
-			var instance = playerTest.instance()
+			var instance = PlayerScene.instance()
 			instance.player = index
 			if index == 1:
 				instance.translation = $Positions/Position1.translation

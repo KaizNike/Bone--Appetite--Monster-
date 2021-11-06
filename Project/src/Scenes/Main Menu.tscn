@@ -101,6 +101,7 @@ text = "Quit"
 focus_neighbour_left = NodePath("../../../Control/PanelContainer/VBoxContainer/LocalPlayButton")
 
 [connection signal="pressed" from="Control/PanelContainer/VBoxContainer/LocalPlayButton" to="." method="_on_LocalPlayButton_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="Control/PanelContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="toggled" from="UtilityUI/PopupPanel/CheckButton" to="." method="_on_CheckButton_toggled"]
 
