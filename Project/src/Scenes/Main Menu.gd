@@ -33,5 +33,5 @@ func _on_CreditsButton_pressed():
 
 
 func _on_OnlinePlayButton_pressed():
-	get_tree().change_scene("res://src/Scenes/OnlineStartup.tscn")
+	get_tree().change_scene("res://src/Scenes/OnlineIntermiediary.tscn")
 	pass # Replace with function body.

@@ -3,6 +3,8 @@ extends Spatial
 export(PackedScene) var PlayerScene
 
 func _ready():
+	MusicPlayer.stop_playing()
+	MusicPlayer.get_node("SnG").play()
 	if Globals.playersReady.size() == 0:
 		print("That was weird!")
 		get_tree().change_scene("res://src/Scenes/Main Menu.tscn")

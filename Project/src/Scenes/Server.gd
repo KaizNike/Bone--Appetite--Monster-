@@ -1,7 +1,7 @@
 extends Node
 
 var rooms = []
-var room = {"key":"","active":false, "score":0, "host_ip": ""}
+var room = {"key":"","active":false, "score":0, "host_ip": "", "public": false}
 
 
 func _ready():
@@ -65,6 +65,8 @@ remote func remove_room(key) -> bool:
 	return false
 
 remote func check_for_room(key) -> bool:
+	if rooms == []:
+		return false
 	for Room in rooms:
 		if Room.has(key):
 			return true

@@ -91,25 +91,36 @@ margin_bottom = 26.0
 theme = ExtResource( 3 )
 text = "AAAA"
 
-[node name="Divider" type="Label" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
+[node name="Divider2" type="VSeparator" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
 margin_left = 128.0
-margin_top = 5.0
-margin_right = 136.0
-margin_bottom = 26.0
+margin_right = 132.0
+margin_bottom = 31.0
 theme = ExtResource( 3 )
-text = "*"
+
+[node name="CheckBox" type="CheckBox" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
+margin_left = 136.0
+margin_right = 216.0
+margin_bottom = 31.0
+theme = ExtResource( 3 )
+text = "Public?"
+
+[node name="Divider" type="VSeparator" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
+margin_left = 220.0
+margin_right = 224.0
+margin_bottom = 31.0
+theme = ExtResource( 3 )
 
 [node name="Label3" type="Label" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
-margin_left = 140.0
+margin_left = 228.0
 margin_top = 5.0
-margin_right = 218.0
+margin_right = 306.0
 margin_bottom = 26.0
 theme = ExtResource( 3 )
 text = "Join Room:"
 
 [node name="JoinRoomCode" type="LineEdit" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
-margin_left = 222.0
-margin_right = 268.0
+margin_left = 310.0
+margin_right = 356.0
 margin_bottom = 31.0
 theme = ExtResource( 3 )
 placeholder_text = "????"
@@ -144,18 +155,11 @@ margin_bottom = 21.0
 theme = ExtResource( 3 )
 text = "0"
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HSplitContainer2"]
+[node name="MarginContainer" type="VSeparator" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HSplitContainer2"]
 margin_left = 77.0
 margin_right = 87.0
 margin_bottom = 21.0
 rect_min_size = Vector2( 10, 0 )
-
-[node name="Label" type="Label" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HSplitContainer2/MarginContainer"]
-margin_top = 3.0
-margin_right = 10.0
-margin_bottom = 17.0
-text = "*"
-align = 1
 
 [node name="Label2" type="Label" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HSplitContainer2"]
 margin_left = 91.0
