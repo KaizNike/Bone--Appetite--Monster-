@@ -2,6 +2,7 @@ extends Node
 
 
 func _ready():
+#	Notifications.notify("YEST!")
 	var peer = NetworkedMultiplayerENet.new()
 	var error = peer.create_client(Globals.SERVER_IP, Globals.SERVER_PORT)
 	if error != OK:

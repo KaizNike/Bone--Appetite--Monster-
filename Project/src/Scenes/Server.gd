@@ -11,9 +11,16 @@ func _ready():
 		var SERVER_PORT = Globals.SERVER_PORT
 		var MAX_PLAYERS = Globals.MAX_PLAYERS
 		var peer = NetworkedMultiplayerENet.new()
+		peer.connect("peer_connected", self, "temp_store_of_peer")
 		peer.create_server(SERVER_PORT, MAX_PLAYERS)
 		get_tree().network_peer = peer
 		$Control/CenterContainer/VBoxContainer/Status.text = "Running."
+
+func temp_store_of_peer(id):
+	print("Connected: " + id)
+
+func send_data_to(id, data):
+  rpc_id(id, "data_received", data)
 
 remote func check_secret_key(key) -> bool:
 	if key == Globals.secret_key:
@@ -62,3 +69,11 @@ remote func check_for_room(key) -> bool:
 		if Room.has(key):
 			return true
 	return false
+
+
+func _on_LineEdit_text_entered(new_text):
+	if new_text != "":
+#		var peers = get_tree().network_peer.set_target_peer(NetworkedMultiplayerENet.TARGET_PEER_BROADCAST)
+		Notifications.rpc('notify', new_text)
+		pass
+	pass # Replace with function body.

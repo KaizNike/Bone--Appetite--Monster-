@@ -29,9 +29,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -251.5
-margin_top = -151.0
+margin_top = -209.5
 margin_right = 251.5
-margin_bottom = 151.0
+margin_bottom = 209.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -40,11 +40,11 @@ __meta__ = {
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 496.0
-margin_bottom = 380.0
+margin_bottom = 412.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/HSplitContainer"]
 margin_right = 402.0
-margin_bottom = 373.0
+margin_bottom = 405.0
 
 [node name="HSplitContainer" type="HSplitContainer" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
 margin_right = 402.0
@@ -63,10 +63,15 @@ margin_right = 402.0
 margin_bottom = 31.0
 text = "X"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
 margin_top = 35.0
 margin_right = 402.0
-margin_bottom = 66.0
+margin_bottom = 39.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
+margin_top = 43.0
+margin_right = 402.0
+margin_bottom = 74.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -109,17 +114,22 @@ margin_bottom = 31.0
 theme = ExtResource( 3 )
 placeholder_text = "????"
 
-[node name="Label2" type="Label" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
-margin_top = 70.0
+[node name="HSeparator2" type="HSeparator" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
+margin_top = 78.0
 margin_right = 402.0
-margin_bottom = 91.0
+margin_bottom = 82.0
+
+[node name="Label2" type="Label" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
+margin_top = 86.0
+margin_right = 402.0
+margin_bottom = 107.0
 theme = ExtResource( 3 )
 text = "Need controllers or have everyone use keyboard!"
 
 [node name="HSplitContainer2" type="HBoxContainer" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
-margin_top = 95.0
+margin_top = 111.0
 margin_right = 402.0
-margin_bottom = 116.0
+margin_bottom = 132.0
 
 [node name="Label" type="Label" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HSplitContainer2"]
 margin_right = 60.0
@@ -161,10 +171,15 @@ margin_bottom = 21.0
 theme = ExtResource( 3 )
 text = "0"
 
-[node name="GridContainer" type="GridContainer" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
-margin_top = 120.0
+[node name="HSeparator3" type="HSeparator" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
+margin_top = 136.0
 margin_right = 402.0
-margin_bottom = 266.0
+margin_bottom = 140.0
+
+[node name="GridContainer" type="GridContainer" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
+margin_top = 144.0
+margin_right = 402.0
+margin_bottom = 290.0
 size_flags_vertical = 3
 columns = 2
 script = ExtResource( 4 )
@@ -390,10 +405,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HSplitContainer3" type="HSplitContainer" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
-margin_top = 270.0
+[node name="HSeparator4" type="HSeparator" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
+margin_top = 294.0
 margin_right = 402.0
-margin_bottom = 297.0
+margin_bottom = 298.0
+
+[node name="HSplitContainer3" type="HSplitContainer" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
+margin_top = 302.0
+margin_right = 402.0
+margin_bottom = 329.0
 
 [node name="Label" type="Label" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HSplitContainer3"]
 margin_top = 3.0
@@ -410,9 +430,9 @@ theme = ExtResource( 3 )
 script = ExtResource( 7 )
 
 [node name="HSplitContainer4" type="HSplitContainer" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
-margin_top = 301.0
+margin_top = 333.0
 margin_right = 402.0
-margin_bottom = 332.0
+margin_bottom = 364.0
 
 [node name="Label" type="Label" parent="Control/PanelContainer/HSplitContainer/VBoxContainer/HSplitContainer4"]
 margin_top = 5.0
@@ -429,9 +449,9 @@ theme = ExtResource( 3 )
 script = ExtResource( 8 )
 
 [node name="StartButton" type="Button" parent="Control/PanelContainer/HSplitContainer/VBoxContainer"]
-margin_top = 336.0
+margin_top = 368.0
 margin_right = 402.0
-margin_bottom = 373.0
+margin_bottom = 405.0
 theme = ExtResource( 2 )
 disabled = true
 text = "Start"
@@ -439,20 +459,20 @@ text = "Start"
 [node name="VBoxContainer2" type="VBoxContainer" parent="Control/PanelContainer/HSplitContainer"]
 margin_left = 414.0
 margin_right = 489.0
-margin_bottom = 373.0
+margin_bottom = 405.0
 
 [node name="ChatLog" type="RichTextLabel" parent="Control/PanelContainer/HSplitContainer/VBoxContainer2"]
 margin_right = 75.0
-margin_bottom = 345.0
+margin_bottom = 377.0
 size_flags_vertical = 3
 theme = ExtResource( 3 )
 text = "Chat log!"
 script = ExtResource( 9 )
 
 [node name="LineEdit" type="LineEdit" parent="Control/PanelContainer/HSplitContainer/VBoxContainer2"]
-margin_top = 349.0
+margin_top = 381.0
 margin_right = 75.0
-margin_bottom = 373.0
+margin_bottom = 405.0
 
 [node name="ConnectionContainer" parent="." instance=ExtResource( 10 )]
 

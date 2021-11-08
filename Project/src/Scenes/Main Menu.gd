@@ -30,3 +30,8 @@ func _on_CheckButton_toggled(button_pressed):
 func _on_CreditsButton_pressed():
 	get_tree().change_scene("res://src/Scenes/Credits.tscn")
 	pass # Replace with function body.
+
+
+func _on_OnlinePlayButton_pressed():
+	get_tree().change_scene("res://src/Scenes/OnlineStartup.tscn")
+	pass # Replace with function body.

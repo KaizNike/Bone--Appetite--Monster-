@@ -24,7 +24,7 @@ func _process(delta):
 	if time > 0.0:
 		time -= delta
 
-func notify(text):
+remote func notify(text):
 	notifications.push_back(text)
 "
 

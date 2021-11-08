@@ -1,7 +1,7 @@
 extends Node
 #Version - Update with changes
-var version = [0,9,"-alpha"]
-var versonInfo = "Trying animations!"
+var version = [0,10,"-alpha"]
+var versonInfo = "Server test!"
 ##
 var gameLength = 60 * 5
 var Seed = 0
