@@ -1,8 +1,9 @@
 extends Node
 
 var rooms = []
-var room = {"key":"","active":false, "score":0, "host_ip": "", "public": false}
+var room = {"key":"","pass":"","active":false, "score":0, "host_ip": "", "public": false}
 
+var roomCheck = ["key", "pass", "active", "score", "host_ip", "public"]
 
 func _ready():
 	randomize()
@@ -28,6 +29,17 @@ remote func check_secret_key(key) -> bool:
 	else:
 		return false
 
+remote func get_random_room():
+	if rooms == []:
+		return "AAAA"
+	for Room in rooms:
+		for stop in roomCheck:
+			if not Room.has(stop):
+				return "AAAA"
+		if Room.public == true and Room.active == true:
+			return Room.key
+	pass
+
 remote func request_room() -> String:
 	var RoomKey = random_room(Globals.room_key_size)
 	while(check_for_room(RoomKey)):
@@ -40,6 +52,8 @@ func random_room(size) -> String:
 	var room_key = ''
 	for i in range(size):
 		room_key += capital_characters[randi()%n_chars]
+	if room_key == "AAAA":
+		room_key = random_room(size)
 	return room_key
 
 remote func get_rooms_length() -> int:
@@ -64,12 +78,13 @@ remote func remove_room(key) -> bool:
 		index += 1
 	return false
 
-remote func check_for_room(key) -> bool:
+remote func check_for_room(key):
 	if rooms == []:
 		return false
 	for Room in rooms:
 		if Room.has(key):
-			return true
+			if Room.key == key:
+				return Room.host_ip
 	return false
 
 

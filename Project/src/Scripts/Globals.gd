@@ -23,6 +23,7 @@ var secret_key = "Aba"
 var characters = 'abcdefghijklmnopqrstuvwxyz'
 var capital_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var room_key_size = 4
+var host_room_key = ""
 ##
 
 

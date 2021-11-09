@@ -22,6 +22,7 @@ MusicPlayer="*res://src/AutoLoad/MusicPlayer.tscn"
 Notifications="*res://src/Scenes/Notifications.tscn"
 Tools="*res://src/AutoLoad/Tools.gd"
 Uuid="*res://src/AutoLoad/UUID.gd"
+Server="*res://src/Scenes/Server.gd"
 
 [input]
 
