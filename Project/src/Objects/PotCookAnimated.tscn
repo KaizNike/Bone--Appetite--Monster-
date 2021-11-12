@@ -69,7 +69,9 @@ shape = SubResource( 1 )
 "anims/food cooking" = SubResource( 2 )
 "anims/food outside" = SubResource( 3 )
 
-[node name="PCInteractionArea" type="Area" parent="." groups=["interact"]]
+[node name="PCInteractionArea" type="Area" parent="." groups=[
+"interact",
+]]
 collision_layer = 1024
 collision_mask = 1024
 script = ExtResource( 3 )

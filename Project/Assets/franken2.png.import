@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Sprite-Sheet-Stir.png-d92f81053cdc033b1582c76c03ca5dc4.s3tc.stex"
-path.etc2="res://.import/Sprite-Sheet-Stir.png-d92f81053cdc033b1582c76c03ca5dc4.etc2.stex"
+path.s3tc="res://.import/franken2.png-12b91bc4036e2229662b845cfd2ce632.s3tc.stex"
+path.etc2="res://.import/franken2.png-12b91bc4036e2229662b845cfd2ce632.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/2d/characters/frankenspoopy/Sprite-Sheet-Stir.png"
-dest_files=[ "res://.import/Sprite-Sheet-Stir.png-d92f81053cdc033b1582c76c03ca5dc4.s3tc.stex", "res://.import/Sprite-Sheet-Stir.png-d92f81053cdc033b1582c76c03ca5dc4.etc2.stex" ]
+source_file="res://Assets/franken2.png"
+dest_files=[ "res://.import/franken2.png-12b91bc4036e2229662b845cfd2ce632.s3tc.stex", "res://.import/franken2.png-12b91bc4036e2229662b845cfd2ce632.etc2.stex" ]
 
 [params]
 

@@ -19,19 +19,19 @@ margin_bottom = 14.0
 [node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 91.0
-margin_bottom = 25.0
+margin_right = 99.0
+margin_bottom = 28.0
 
 [node name="Label" type="Label" parent="PanelContainer/HSplitContainer"]
-margin_right = 35.0
-margin_bottom = 18.0
+margin_right = 39.0
+margin_bottom = 21.0
 theme = ExtResource( 2 )
 text = "Time:"
 
 [node name="TimeLeft" type="Label" parent="PanelContainer/HSplitContainer"]
-margin_left = 47.0
-margin_right = 84.0
-margin_bottom = 18.0
+margin_left = 51.0
+margin_right = 92.0
+margin_bottom = 21.0
 theme = ExtResource( 2 )
 text = "00:00"
 

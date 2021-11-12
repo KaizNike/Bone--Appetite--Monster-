@@ -1,6 +1,6 @@
 extends Spatial
 
-export(PackedScene) var PlayerScene
+export(PackedScene) var playerTest
 
 func _ready():
 	MusicPlayer.stop_playing()
@@ -11,7 +11,7 @@ func _ready():
 	var index = 1
 	for player in Globals.playersReady:
 		if player:
-			var instance = PlayerScene.instance()
+			var instance = playerTest.instance()
 			instance.player = index
 			if index == 1:
 				instance.translation = $Positions/Position1.translation

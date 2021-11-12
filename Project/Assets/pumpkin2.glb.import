@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/pot.glb-4b852c342432807ca3a889367ee998cd.scn"
+path="res://.import/pumpkin2.glb-750f0f3d26c7f2782b220e205398be4a.scn"
 
 [deps]
 
-source_file="res://Assets/3d/objects/Pot/pot.glb"
-dest_files=[ "res://.import/pot.glb-4b852c342432807ca3a889367ee998cd.scn" ]
+source_file="res://Assets/pumpkin2.glb"
+dest_files=[ "res://.import/pumpkin2.glb-750f0f3d26c7f2782b220e205398be4a.scn" ]
 
 [params]
 

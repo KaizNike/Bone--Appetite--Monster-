@@ -8,7 +8,7 @@ extends StaticBody
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$pot_and_bone/AnimationPlayer.play("SphereAction")
+	$AnimationPlayer.play("food cooking")
 	pass # Replace with function body.
 
 
