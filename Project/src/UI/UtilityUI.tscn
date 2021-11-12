@@ -24,7 +24,7 @@ __meta__ = {
 [node name="CheckButton" type="CheckButton" parent="PopupPanel"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 130.0
+margin_right = 126.0
 margin_bottom = 47.0
 hint_tooltip = "Turns all sound on or off! Bug developers for more options next release!"
 theme = ExtResource( 1 )

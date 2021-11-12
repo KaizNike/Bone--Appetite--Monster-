@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/Scenes/Main.gd" type="Script" id=1]
+[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UI/GameUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/2d/enviroments/creepy_basement.jpg" type="Texture" id=4]
+[ext_resource path="res://src/Objects/PotCookAnimated.tscn" type="PackedScene" id=5]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.129412, 0.615686, 0.184314, 1 )
+
+[sub_resource type="PanoramaSky" id=2]
+panorama = ExtResource( 4 )
+
+[sub_resource type="Environment" id=3]
+background_mode = 2
+background_sky = SubResource( 2 )
+
+[node name="Main" type="Spatial"]
+script = ExtResource( 1 )
+PlayerScene = ExtResource( 2 )
+
+[node name="Players" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.72723, 0 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="."]
+radius = 12.7835
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.935998, 0.352005, 0, -0.352005, 0.935998, 0, 14.0885, 17.2178 )
+
+[node name="Positions" type="Node" parent="."]
+
+[node name="Position1" type="Position3D" parent="Positions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4, -10 )
+
+[node name="Position2" type="Position3D" parent="Positions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 4, -10 )
+
+[node name="Position3" type="Position3D" parent="Positions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 4, 10 )
+
+[node name="Position4" type="Position3D" parent="Positions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4, 10 )
+
+[node name="UtilityUI" parent="." instance=ExtResource( 3 )]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+use_collision = true
+width = 85.0
+height = 0.5
+depth = 85.0
+material = SubResource( 1 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.911862, 0.410496, 0, -0.410496, -0.911862, 0, 0, 0 )
+light_energy = 0.3
+
+[node name="PotCookAnimated" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.57041, 1.07233, -13.9436 )
