@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UI/GameUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/2d/enviroments/creepy_basement.jpg" type="Texture" id=4]
 [ext_resource path="res://src/Objects/PotCookAnimated.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Objects/LightCheap.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.129412, 0.615686, 0.184314, 1 )
@@ -61,3 +62,6 @@ light_energy = 0.3
 
 [node name="PotCookAnimated" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.57041, 1.07233, -13.9436 )
+
+[node name="LightCheap" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.62984, 0 )

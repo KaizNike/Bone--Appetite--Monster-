@@ -18,6 +18,7 @@ __meta__ = {
 }
 
 [node name="MenuParticles" parent="Control" instance=ExtResource( 6 )]
+z_index = -5
 
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
 anchor_left = 0.5

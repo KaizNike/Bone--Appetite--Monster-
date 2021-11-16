@@ -11,6 +11,9 @@ func _ready():
 	$Control/PanelContainer/VBoxContainer/VersionLabel.hint_tooltip = Globals.versonInfo
 	$Control/PanelContainer/VBoxContainer/LocalPlayButton.grab_focus()
 
+func _physics_process(delta):
+	Notifications.notify("Last day, let's finish this thing!")
+
 func _on_QuitButton_pressed():
 	get_tree().quit()
 	pass # Replace with function body.
