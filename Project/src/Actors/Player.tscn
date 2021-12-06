@@ -228,31 +228,6 @@ flags = 23
 atlas = ExtResource( 8 )
 region = Rect2( 2380, 0, 140, 250 )
 
-[sub_resource type="AtlasTexture" id=29]
-flags = 23
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 140, 250 )
-
-[sub_resource type="AtlasTexture" id=30]
-flags = 23
-atlas = ExtResource( 8 )
-region = Rect2( 140, 0, 140, 250 )
-
-[sub_resource type="AtlasTexture" id=31]
-flags = 23
-atlas = ExtResource( 8 )
-region = Rect2( 280, 0, 140, 250 )
-
-[sub_resource type="AtlasTexture" id=32]
-flags = 23
-atlas = ExtResource( 8 )
-region = Rect2( 420, 0, 140, 250 )
-
-[sub_resource type="AtlasTexture" id=33]
-flags = 23
-atlas = ExtResource( 8 )
-region = Rect2( 560, 0, 140, 250 )
-
 [sub_resource type="AtlasTexture" id=36]
 flags = 23
 atlas = ExtResource( 9 )
@@ -403,6 +378,31 @@ flags = 23
 atlas = ExtResource( 7 )
 region = Rect2( 1120, 0, 140, 250 )
 
+[sub_resource type="AtlasTexture" id=29]
+flags = 23
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 140, 250 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 23
+atlas = ExtResource( 8 )
+region = Rect2( 140, 0, 140, 250 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 23
+atlas = ExtResource( 8 )
+region = Rect2( 280, 0, 140, 250 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 23
+atlas = ExtResource( 8 )
+region = Rect2( 420, 0, 140, 250 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 23
+atlas = ExtResource( 8 )
+region = Rect2( 560, 0, 140, 250 )
+
 [sub_resource type="SpriteFrames" id=21]
 animations = [ {
 "frames": [ SubResource( 34 ) ],
@@ -420,11 +420,6 @@ animations = [ {
 "name": "letgo",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
-"loop": true,
-"name": "grab",
-"speed": 5.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "smash",
@@ -438,6 +433,11 @@ animations = [ {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
+"loop": true,
+"name": "grab",
 "speed": 5.0
 } ]
 
