@@ -60,3 +60,8 @@ func _on_OptionButton_item_selected(index):
 	elif index == 4:
 		Globals.gameLength = 60*60
 	print(Globals.gameLength)
+
+
+func _on_SeedLineEdit_focus_entered():
+#	OS.show_virtual_keyboard($Control/PanelContainer/VBoxContainer/HSplitContainer4/SeedLineEdit.text)
+	pass # Replace with function body.

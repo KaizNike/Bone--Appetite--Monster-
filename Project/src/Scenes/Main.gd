@@ -1,15 +1,17 @@
 extends Spatial
 
-export(PackedScene) var playerTest
+export(PackedScene) var PlayerScene
 
 func _ready():
+	MusicPlayer.stop_playing()
+	MusicPlayer.get_node("SnG").play()
 	if Globals.playersReady.size() == 0:
 		print("That was weird!")
 		get_tree().change_scene("res://src/Scenes/Main Menu.tscn")
 	var index = 1
 	for player in Globals.playersReady:
 		if player:
-			var instance = playerTest.instance()
+			var instance = PlayerScene.instance()
 			instance.player = index
 			if index == 1:
 				instance.translation = $Positions/Position1.translation

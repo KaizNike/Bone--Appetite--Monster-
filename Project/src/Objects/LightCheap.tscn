@@ -1,0 +1,20 @@
+[gd_scene format=2]
+
+[node name="LightCheap" type="Spatial"]
+
+[node name="CSGCylinder" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.737415, 0 )
+radius = 0.2
+height = 2.0
+sides = 32
+
+[node name="CSGSphere" type="CSGSphere" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+cast_shadow = 0
+invert_faces = true
+radius = 0.9
+
+[node name="OmniLight" type="OmniLight" parent="CSGSphere"]
+light_color = Color( 1, 0.980392, 0.784314, 1 )
+shadow_enabled = true
+omni_range = 16.0

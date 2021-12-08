@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CylinderMesh" id=6]
+bottom_radius = 0.02
+
+[node name="Indicator" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.91673, 0 )
+visible = false
+mesh = SubResource( 6 )
+material/0 = null
