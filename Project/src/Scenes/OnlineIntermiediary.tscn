@@ -81,6 +81,31 @@ placeholder_text = "AAAA"
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
 
+[node name="Control2" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="Control2"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -164.0
+margin_bottom = 139.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control2/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 157.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 150, 125 )
+text = "By clicking host, you share your IP with players and server. By clicking join and entering a room (or random), you share IP with host."
+
 [connection signal="pressed" from="Control/PanelContainer/VBoxContainer/ReturnButton" to="." method="_on_ReturnButton_pressed"]
 [connection signal="pressed" from="Control/PanelContainer/VBoxContainer/HostButton" to="." method="_on_HostButton_pressed"]
 [connection signal="text_entered" from="Control/PanelContainer/VBoxContainer/LineEdit" to="." method="_on_LineEdit_text_entered"]
