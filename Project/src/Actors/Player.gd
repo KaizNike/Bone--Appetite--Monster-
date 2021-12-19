@@ -8,9 +8,13 @@ export var gravity = 50
 var vel = Vector3.ZERO
 var areas_in_range = []
 var holding_something = false
+var held_object
 var is_grabbing = false
 var throw = false
-var a_area = {"priority": 0, "area": Area, "targetedLast": false}
+# Currently supported: "cook"
+var current_action = ""
+# A note, interactType exists as interact_type in the areas, strange i know
+var a_area = {"priority": 0, "area": Area, "interactType": "", "targetedLast": false}
 
 class A_Area_Sorter:
 	static func sort_ascending(a:Dictionary, b:Dictionary):
@@ -22,6 +26,14 @@ class A_Area_Sorter:
 func _ready():
 	$PCInteractionArea.connect("change_target_status",self,"target_status_changed")
 	pass # Replace with function body.
+	
+func _input(event):
+	if (event.is_action_pressed("action_key") and player == 1 or
+	event.is_action_pressed("p2_action_key") and player == 2 or
+	event.is_action_pressed("p3_action_key") and player == 3 or
+	event.is_action_pressed("p4_action_key") and player == 4):
+		interact()
+	pass
 
 func _physics_process(delta):
 	vel = _get_dir()
@@ -63,6 +75,10 @@ func animates_player(vel):
 	if holding_something:
 		if throw:
 			throw_foward()
+		return
+	elif current_action == "cook":
+		$AnimatedSprite3D.animation = "cook"
+		$AnimatedSprite3D.playing = true
 		return
 	elif is_grabbing:
 		$AnimatedSprite3D.animation = "grab"
@@ -112,12 +128,36 @@ func find_index_of_area_in_array(area, array):
 		index += 1
 	return false
 
+func remove_area_from_array(area, array:Array):
+	var index = find_index_of_area_in_array(area,array)
+	array.remove(index)
+	if area.targetted:
+		area.targetted = false
+	if area.is_interacting:
+		area.is_interacting = false
+		current_action = ""
+
+func interact():
+	var interact_type = ""
+	if areas_in_range.size() > 0:
+		if areas_in_range[0].area.targetted == true:
+			areas_in_range[0].area.is_interacting = true
+			interact_type = areas_in_range[0].area.interact_type
+	if interact_type == "":
+		return
+	else:
+		if interact_type == "pot":
+#			$AnimatedSprite3D.animation = "cook"
+#			$AnimatedSprite3D.playing = true
+			current_action = "cook"
+
 func _on_PCInteractionArea_area_entered(area):
 	if area.is_in_group("interact"):
-		if "interact_priority" in area and "targetted" in area:
+		if "interact_priority" in area and "targetted" in area and "interact_type" in area:
 			if not find_if_area_in_array(area, areas_in_range):
 				var new_area = a_area
 				new_area.area = area
+				new_area.interactType = area.interact_type
 				new_area.priority = area.priority
 				areas_in_range.push_front(a_area)
 				sort_areas()
@@ -129,4 +169,13 @@ func _on_PCInteractionArea_area_entered(area):
 func _on_AnimatedSprite3D_animation_finished():
 	if $AnimatedSprite3D.animation == "grab":
 		$AnimatedSprite3D.playing = false
+	pass # Replace with function body.
+
+
+func _on_PCInteractionArea_area_exited(area):
+	if area.is_in_group("interact"):
+		if "interact_priority" in area and "targetted" in area:
+			if find_if_area_in_array(area, areas_in_range):
+				remove_area_from_array(area, areas_in_range)
+				pass
 	pass # Replace with function body.

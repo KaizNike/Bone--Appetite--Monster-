@@ -484,8 +484,9 @@ shaded = true
 alpha_cut = 2
 frames = SubResource( 21 )
 animation = "cook"
-frame = 3
+frame = 5
 playing = true
 
 [connection signal="area_entered" from="PCInteractionArea" to="." method="_on_PCInteractionArea_area_entered"]
+[connection signal="area_exited" from="PCInteractionArea" to="." method="_on_PCInteractionArea_area_exited"]
 [connection signal="animation_finished" from="AnimatedSprite3D" to="." method="_on_AnimatedSprite3D_animation_finished"]

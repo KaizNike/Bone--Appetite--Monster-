@@ -8,8 +8,11 @@ extends StaticBody
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimationPlayer.play("food cooking")
+	$pot_and_bone/AnimationPlayer.play("still")
+#	$pot_and_bone/AnimationPlayer.play("SphereAction")
+#	$AnimationPlayer.play("food cooking")
 	$PCInteractionArea.connect("change_target_status",self,"target_status_changed")
+	$PCInteractionArea.connect("change_interact_status",self,"interacting_status_changed")
 	pass # Replace with function body.
 
 
@@ -22,3 +25,9 @@ func target_status_changed(Bool):
 		$Indicator.visible = true
 	else:
 		$Indicator.visible = false
+
+func interacting_status_changed(Bool):
+	if Bool:
+		$pot_and_bone/AnimationPlayer.play("SphereAction")
+	else:
+		$pot_and_bone/AnimationPlayer.play("still")
