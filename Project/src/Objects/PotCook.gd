@@ -8,7 +8,7 @@ extends StaticBody
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$pot_and_bone/AnimationPlayer.play("still")
+#	$pot_and_bone/AnimationPlayer.play("still")
 #	$pot_and_bone/AnimationPlayer.play("SphereAction")
 #	$AnimationPlayer.play("food cooking")
 	$PCInteractionArea.connect("change_target_status",self,"target_status_changed")
